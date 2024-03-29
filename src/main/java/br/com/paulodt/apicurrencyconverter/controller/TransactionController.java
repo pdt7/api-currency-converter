@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.paulodt.apicurrencyconverter.entity.Conversion;
 import br.com.paulodt.apicurrencyconverter.entity.Transaction;
 import br.com.paulodt.apicurrencyconverter.service.TransactionService;
 import jakarta.validation.Valid;
@@ -27,11 +28,10 @@ public class TransactionController {
     private TransactionService transactionService;
     
     @PostMapping
-    List<Transaction> create(@RequestBody @Valid Transaction transaction){
-        transaction.setConversionRate(5);//recuperar de api externa
+    List<Transaction> create(@RequestBody @Valid Transaction transaction) throws Exception{
+        transactionService.getRateConversion(transaction);
         Date data = new Date(System.currentTimeMillis());
         transaction.setDate(data);
-        transaction.setDestinationValue(transaction.getConversionRate() * transaction.getOriginValue());
         return transactionService.create(transaction);
     }
 

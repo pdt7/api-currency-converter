@@ -7,9 +7,9 @@
  <img src="https://img.shields.io/static/v1?label=Tipo&message=Jaya´s Challenge&color=8257E5&labelColor=000000" alt="Jaya´s Challange" />
 </p>
 
-API para gerenciar tarefas (CRUD) que faz parte [desse desafio](https://github.com/simplify-liferay/desafio-junior-backend-simplify) para pessoas desenvolvedoras backend júnior, que se candidatam para a Simplify.
+API developed to do currency converter to Jaya´s challenge. The challenge is available at this link [Currency Converter](https://drive.google.com/file/d/1XVrrWv6eTnCarCZf637_Ga_FHZogoRkk/view?usp=drive_link) to Senior Java Developer at Jaya. This currency converter available to 4 currencys (BRL, USD, EUR, JPY)
 
-O projeto foi elaborado [nesse vídeo](https://youtu.be/IjProDV001o).
+The project is availabre at this link [Git Hub](https://github.com/pdt7/api-currency-converter).
 
 ## Tecnologias
  
@@ -23,34 +23,46 @@ O projeto foi elaborado [nesse vídeo](https://youtu.be/IjProDV001o).
 
 - SOLID, DRY, YAGNI, KISS
 - API REST
-- Consultas com Spring Data JPA
-- Injeção de Dependências
-- Tratamento de respostas de erro
-- Geração automática do Swagger com a OpenAPI 3
+- Queries with Spring Data JPA
+- Dependency inject
+- Handling error responses
+- Swagger´s Automatic buider with OpenAPI 3
 
 ## Como Executar
 
-- Clonar repositório git
-- Construir o projeto:
+- Clone git repository
+- Build project:
 ```
 $ ./mvnw clean package
 ```
-- Executar a aplicação:
+- Run aplication:
 ```
-$ java -jar target/todolist-0.0.1-SNAPSHOT.jar
+$ java -jar target/api-currency-converter.jar
 ```
 
-A API poderá ser acessada em [localhost:8080](http://localhost:8080).
-O Swagger poderá ser visualizado em [localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+A API can be accessed at [localhost:8080](http://localhost:8080).
+O Swagger can be accessed at [localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
 ## API Endpoints
 
-Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [httpie](https://httpie.io):
+Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [Postman](https://www.postman.com/):
 
-- Criar Tarefa 
+- Create Transaction 
 ```
-$ http POST :8080/todos nome="Todo 1" descricao="Desc Todo 1" prioridade=1
+- http POST http://localhost:8080/transaction
+[
+  {
+    "idUsuario": 2,
+    "originCurrency": "BRL",
+    "originValue": 10,
+    "destinationCurrency" : "EUR"
+  }
+]
+```
 
+- Get Transactions
+```
+- http GET http://localhost:8080/transaction
 [
   {
     "descricao": "Desc Todo 1",
@@ -62,39 +74,23 @@ $ http POST :8080/todos nome="Todo 1" descricao="Desc Todo 1" prioridade=1
 ]
 ```
 
-- Listar Tarefas
+- Update Transaction
 ```
-$ http GET :8080/todos
-
+$ http PUT http://localhost:8080/transaction
 [
   {
-    "descricao": "Desc Todo 1",
-    "id": 1,
-    "nome": "Todo 1",
-    "prioridade": 1,
-    "realizado": false
+    "id": 7,
+    "idUsuario": 2,
+    "originCurrency": "BRL",
+    "originValue": 100,
+    "destinationCurrency" : "EUR"
   }
 ]
 ```
 
-- Atualizar Tarefa
+- Delete Transaction
 ```
-$ http PUT :8080/todos/1 nome="Todo 1 Up" descricao="Desc Todo 1 Up" prioridade=2
-
-[
-  {
-    "descricao": "Desc Todo 1 Up",
-    "id": 1,
-    "nome": "Todo 1 Up",
-    "prioridade": 2,
-    "realizado": false
-  }
-]
-```
-
-- Remover Tarefa
-```
-http DELETE :8080/todos/1
+http DELETE http://localhost:8080/transaction/1
 
 [ ]
 ```

@@ -1,6 +1,6 @@
 package br.com.paulodt.apicurrencyconverter.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,8 +22,8 @@ public class Transaction {
     private long originValue;
     @NotBlank
     private String destinationCurrency;
-    private long destinationValue;
-    private long conversionRate;
+    private double destinationValue;
+    private double conversionRate;
     
     public Transaction(){
 
@@ -65,16 +65,16 @@ public class Transaction {
     public void setDestinationCurrency(String destinationCurrency) {
         this.destinationCurrency = destinationCurrency;
     }
-    public long getDestinationValue() {
+    public double getDestinationValue() {
         return destinationValue;
     }
-    public void setDestinationValue(long destinationValue) {
+    public void setDestinationValue(double destinationValue) {
         this.destinationValue = destinationValue;
     }
-    public long getConversionRate() {
+    public double getConversionRate() {
         return conversionRate;
     }
-    public void setConversionRate(long conversionRate) {
+    public void setConversionRate(double conversionRate) {
         this.conversionRate = conversionRate;
     }
     public Date getDate() {
