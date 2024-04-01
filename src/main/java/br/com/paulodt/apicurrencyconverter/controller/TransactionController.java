@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.paulodt.apicurrencyconverter.ApiCurrencyConverterApplication;
 import br.com.paulodt.apicurrencyconverter.entity.Transaction;
-import br.com.paulodt.apicurrencyconverter.exception.UserNotFoundException;
 import br.com.paulodt.apicurrencyconverter.service.TransactionService;
 import br.com.paulodt.apicurrencyconverter.service.UserService;
 import jakarta.validation.Valid;
@@ -32,22 +31,18 @@ public class TransactionController {
 
     private TransactionService transactionService;
         
-    private static Logger log = LoggerFactory.getLogger(ApiCurrencyConverterApplication.class);
+private static Logger log = LoggerFactory.getLogger(ApiCurrencyConverterApplication.class);
 
     @PostMapping
-    ResponseEntity<String> create(@RequestBody @Valid Transaction transaction) throws Exception{
-        try{
-            log.info("Inicio da criacao POST");
-            transactionService.getRateConversion(transaction);
-            Date data = new Date(System.currentTimeMillis());
-            transaction.setDate(data);
-            transactionService.create(transaction);
-            log.info("Fim da criacao POST");
-            return ResponseEntity.ok("Transaction created successfully");
-        }catch(UserNotFoundException ex){
-            return ResponseEntity.badRequest().body(ex.getMessage());
-        }
-
+    ResponseEntity<Transaction> create(@RequestBody @Valid Transaction transaction) throws Exception{
+        log.info("POST transaction - BEGIN");
+        log.info("TRANSACTION INPUT " + transaction.toString());
+        transactionService.getRateConversion(transaction);
+        Date data = new Date(System.currentTimeMillis());
+        transaction.setDate(data);
+        transactionService.create(transaction);
+        log.info("POST transaction - END");
+        return ResponseEntity.ok(transaction);
     }
 
     @GetMapping

@@ -32,14 +32,35 @@ class ApiCurrencyConverterApplicationTests {
 	void testCreateTransactionFailure() {
 		User user = new User();
 		user.setId(1l);
-		var transaction = new Transaction(user, "", 10l, "");
+
+		User userNok = new User();
+		userNok.setId(-1l);
+		var transactionUserNotFound = new Transaction(userNok, "USD", 10l, "BRL");
 
 		webTestClient
 			.post()
 			.uri("/transaction")
-			.bodyValue(transaction)
+			.bodyValue(transactionUserNotFound)
 			.exchange()
-			.expectStatus().isBadRequest();
+			.expectStatus().isNotFound();
+
+		var transactionNotOriginCurrency = new Transaction(user, "", 10l, "BRL");
+
+		webTestClient
+			.post()
+			.uri("/transaction")
+			.bodyValue(transactionNotOriginCurrency)
+			.exchange()
+			.expectStatus().isNotFound();
+
+		var transactionNotDestinationCurrency = new Transaction(user, "BRL", 10l, "");
+
+		webTestClient
+			.post()
+			.uri("/transaction")
+			.bodyValue(transactionNotDestinationCurrency)
+			.exchange()
+			.expectStatus().isNotFound();
 	}
 
 }

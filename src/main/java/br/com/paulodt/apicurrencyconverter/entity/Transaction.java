@@ -9,7 +9,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "transaction")
@@ -21,12 +20,8 @@ public class Transaction {
     @ManyToOne
     @JoinColumn(name = "userId")
     private User user;
-
-    @NotBlank(message = "Origin Currency is mandatory.")
     private String originCurrency;
-    
-    private long originValue;
-    @NotBlank(message = "Destination Currency is mandatory.")
+    private double originValue;
     private String destinationCurrency;
     private double destinationValue;
     private double conversionRate;
@@ -59,10 +54,10 @@ public class Transaction {
     public void setOriginCurrency(String originCurrency) {
         this.originCurrency = originCurrency;
     }
-    public long getOriginValue() {
+    public double getOriginValue() {
         return originValue;
     }
-    public void setOriginValue(long originValue) {
+    public void setOriginValue(double originValue) {
         this.originValue = originValue;
     }
     public String getDestinationCurrency() {
@@ -90,5 +85,11 @@ public class Transaction {
         this.date = date;
     }
     private Date date;
-    
+
+    @Override
+    public String toString() {
+        return "Transaction [id=" + id + ", user=" + user + ", originCurrency=" + originCurrency + ", originValue="
+                + originValue + ", destinationCurrency=" + destinationCurrency + ", destinationValue="
+                + destinationValue + ", conversionRate=" + conversionRate + ", date=" + date + "]";
+    }
 }

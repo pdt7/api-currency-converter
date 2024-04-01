@@ -59,7 +59,6 @@ Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [Postman](ht
   }
 ]
 ```
-
 - Get Transactions
 ```
 - http GET http://localhost:8080/transaction
@@ -73,7 +72,6 @@ Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [Postman](ht
   }
 ]
 ```
-
 - Update Transaction
 ```
 $ http PUT http://localhost:8080/transaction
@@ -87,10 +85,14 @@ $ http PUT http://localhost:8080/transaction
   }
 ]
 ```
-
-- Delete Transaction
+- Delete Transaction - transaction_id
 ```
 http DELETE http://localhost:8080/transaction/1
 
-[ ]
+- Get transactions by id
 ```
+http GET http://localhost:8080/transaction/1
+
+- Get transactions by user_id
+```
+http GET http://localhost:8080/transaction/user/1

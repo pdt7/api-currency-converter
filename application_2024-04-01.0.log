@@ -1,92 +1,131 @@
-
-2024-04-01 11:22:12,065 143844 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Starting ApiCurrencyConverterApplication using Java 17.0.10 with PID 32412 (C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter\target\classes started by paulo in C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter)
-2024-04-01 11:22:12,066 143845 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - No active profile set, falling back to 1 default profile: "default"
-2024-04-01 11:22:12,328 144107 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-01 11:22:12,348 144127 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 2 JPA repository interfaces.
-2024-04-01 11:22:12,436 144215 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2024-04-01 11:22:12,437 144216 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2024-04-01 11:22:12,438 144217 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2024-04-01 11:22:12,439 144218 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-04-01 11:22:12,466 144245 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2024-04-01 11:22:12,467 144246 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 397 ms
-2024-04-01 11:22:12,484 144263 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
-2024-04-01 11:22:12,507 144286 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b0ffcf0
-2024-04-01 11:22:12,508 144287 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
-2024-04-01 11:22:12,508 144287 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/currencyconverter'
-2024-04-01 11:22:12,545 144324 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-01 11:22:12,555 144334 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-01 11:22:12,644 144423 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-01 11:22:12,665 144444 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-01 11:22:12,804 144583 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-01 11:22:12,902 144681 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2024-04-01 11:22:12,906 144685 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2024-04-01 11:22:12,911 144690 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2024-04-01 11:22:12,915 144694 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Started ApiCurrencyConverterApplication in 0.901 seconds (process running for 144.911)
-2024-04-01 11:22:12,917 144696 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2024-04-01 11:22:12,919 144698 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Fim da aplicacao
-2024-04-01 11:22:42,420 342  [main] INFO  b.c.p.a.ApiCurrencyConverterApplication - Inicio da aplicacao
-2024-04-01 11:22:42,611 533  [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Inicio da aplicacao
-2024-04-01 11:22:43,031 953  [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2024-04-01 11:22:43,080 1002 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Starting ApiCurrencyConverterApplication using Java 17.0.10 with PID 22188 (C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter\target\classes started by paulo in C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter)
-2024-04-01 11:22:43,088 1010 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - No active profile set, falling back to 1 default profile: "default"
-2024-04-01 11:22:43,165 1087 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-04-01 11:22:43,171 1093 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-04-01 11:22:44,433 2355 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-01 11:22:44,527 2449 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 2 JPA repository interfaces.
-2024-04-01 11:22:45,467 3389 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2024-04-01 11:22:45,486 3408 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2024-04-01 11:22:45,492 3414 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2024-04-01 11:22:45,498 3420 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-04-01 11:22:45,661 3583 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2024-04-01 11:22:45,661 3583 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2488 ms
-2024-04-01 11:22:45,766 3688 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2024-04-01 11:22:46,342 4264 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18129839
-2024-04-01 11:22:46,342 4264 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2024-04-01 11:22:46,370 4292 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/currencyconverter'
-2024-04-01 11:22:46,651 4573 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-01 11:22:46,816 4738 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.22.Final
-2024-04-01 11:22:46,816 4738 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
-2024-04-01 11:22:47,281 5203 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-01 11:22:48,461 6383 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-01 11:22:48,562 6484 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-01 11:22:49,008 6930 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-04-01 11:22:49,744 7666 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-01 11:22:50,364 8286 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2024-04-01 11:22:50,387 8309 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2024-04-01 11:22:50,446 8368 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2024-04-01 11:22:50,476 8398 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Started ApiCurrencyConverterApplication in 7.86 seconds (process running for 8.578)
-2024-04-01 11:22:50,490 8412 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Fim da aplicacao
-2024-04-01 11:23:09,331 27253 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-04-01 11:23:09,371 27293 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-2024-04-01 11:23:09,372 27294 [Thread-5] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2024-04-01 11:23:09,378 27300 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-2024-04-01 11:23:09,385 27307 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
-2024-04-01 11:23:09,389 27311 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-04-01 11:23:09,402 27324 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2024-04-01 11:23:09,421 27343 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2024-04-01 11:23:09,472 27394 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Inicio da aplicacao
-2024-04-01 11:23:56,140 74062 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Starting ApiCurrencyConverterApplication using Java 17.0.10 with PID 22188 (C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter\target\classes started by paulo in C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter)
-2024-04-01 11:23:56,141 74063 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - No active profile set, falling back to 1 default profile: "default"
-2024-04-01 11:23:56,432 74354 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-01 11:23:56,451 74373 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
-2024-04-01 11:23:56,554 74476 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2024-04-01 11:23:56,555 74477 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2024-04-01 11:23:56,556 74478 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2024-04-01 11:23:56,556 74478 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-04-01 11:23:56,579 74501 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2024-04-01 11:23:56,579 74501 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 432 ms
-2024-04-01 11:23:56,605 74527 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
-2024-04-01 11:23:56,633 74555 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c5a854f
-2024-04-01 11:23:56,634 74556 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
-2024-04-01 11:23:56,636 74558 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/currencyconverter'
-2024-04-01 11:23:56,687 74609 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-01 11:23:56,706 74628 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-01 11:23:56,819 74741 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-01 11:23:56,838 74760 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-01 11:23:56,995 74917 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-01 11:23:57,147 75069 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2024-04-01 11:23:57,154 75076 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2024-04-01 11:23:57,160 75082 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2024-04-01 11:23:57,165 75087 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Started ApiCurrencyConverterApplication in 1.14 seconds (process running for 75.264)
-2024-04-01 11:23:57,169 75091 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2024-04-01 11:23:57,170 75092 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Fim da aplicacao
+2024-04-01 15:59:08,250 350  [main] INFO  b.c.p.a.ApiCurrencyConverterApplication - Start app
+2024-04-01 15:59:08,392 492  [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Start app
+2024-04-01 15:59:08,766 866  [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-01 15:59:08,842 942  [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Starting ApiCurrencyConverterApplication using Java 17.0.10 with PID 1972 (C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter\target\classes started by paulo in C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter)
+2024-04-01 15:59:08,843 943  [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - No active profile set, falling back to 1 default profile: "default"
+2024-04-01 15:59:08,956 1056 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-01 15:59:08,957 1057 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-01 15:59:10,118 2218 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-01 15:59:10,193 2293 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+2024-04-01 15:59:11,125 3225 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-04-01 15:59:11,160 3260 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-01 15:59:11,163 3263 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-01 15:59:11,164 3264 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-01 15:59:11,289 3389 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-04-01 15:59:11,289 3389 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2331 ms
+2024-04-01 15:59:11,369 3469 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-01 15:59:11,796 3896 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b1f1578
+2024-04-01 15:59:11,811 3911 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-01 15:59:11,811 3911 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/currencyconverter'
+2024-04-01 15:59:12,130 4230 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-01 15:59:12,264 4364 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.22.Final
+2024-04-01 15:59:12,264 4364 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-04-01 15:59:12,661 4761 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-01 15:59:13,437 5537 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-01 15:59:13,516 5616 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-01 15:59:13,941 6041 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-01 15:59:14,643 6743 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-01 15:59:15,348 7448 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-04-01 15:59:15,380 7480 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-04-01 15:59:15,427 7527 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-01 15:59:15,443 7543 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Started ApiCurrencyConverterApplication in 7.035 seconds (process running for 7.708)
+2024-04-01 15:59:15,459 7559 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - End app
+2024-04-01 15:59:24,032 16132 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-01 15:59:24,032 16132 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-01 15:59:24,032 16132 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-04-01 15:59:50,855 324  [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ApiCurrencyConverterApplicationTests]: using SpringBootContextLoader
+2024-04-01 15:59:50,857 326  [main] DEBUG o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [br.com.paulodt.apicurrencyconverter.ApiCurrencyConverterApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-04-01 15:59:50,862 331  [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [br.com.paulodt.apicurrencyconverter.ApiCurrencyConverterApplicationTests]: ApiCurrencyConverterApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-01 15:59:50,906 375  [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [ApiCurrencyConverterApplicationTests]: [ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, WebTestClientContextCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer]
+2024-04-01 15:59:51,055 524  [main] DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter\target\classes\br\com\paulodt\apicurrencyconverter\ApiCurrencyConverterApplication.class]
+2024-04-01 15:59:51,058 527  [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration br.com.paulodt.apicurrencyconverter.ApiCurrencyConverterApplication for test class br.com.paulodt.apicurrencyconverter.ApiCurrencyConverterApplicationTests
+2024-04-01 15:59:51,188 657  [main] DEBUG o.s.t.c.u.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
+2024-04-01 15:59:51,198 667  [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [ApiCurrencyConverterApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, ResetMocksTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener]
+2024-04-01 15:59:51,205 674  [main] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test class: class [ApiCurrencyConverterApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-04-01 15:59:51,220 689  [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class br.com.paulodt.apicurrencyconverter.ApiCurrencyConverterApplicationTests
+2024-04-01 15:59:51,263 732  [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2024-04-01 15:59:51,529 998  [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-01 15:59:51,571 1040 [main] INFO  b.c.p.a.ApiCurrencyConverterApplicationTests - Starting ApiCurrencyConverterApplicationTests using Java 17.0.10 with PID 17076 (started by paulo in C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter)
+2024-04-01 15:59:51,579 1048 [main] INFO  b.c.p.a.ApiCurrencyConverterApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-04-01 15:59:52,881 2350 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-01 15:59:53,121 2590 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 197 ms. Found 2 JPA repository interfaces.
+2024-04-01 15:59:54,082 3551 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 0 (http)
+2024-04-01 15:59:54,102 3571 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2024-04-01 15:59:54,102 3571 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-01 15:59:54,102 3571 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-01 15:59:54,267 3736 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-04-01 15:59:54,267 3736 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2671 ms
+2024-04-01 15:59:54,548 4017 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-01 15:59:54,680 4149 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.22.Final
+2024-04-01 15:59:54,680 4149 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-04-01 15:59:55,250 4719 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-01 15:59:55,280 4749 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-01 15:59:55,793 5262 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f785a27
+2024-04-01 15:59:55,793 5262 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-01 15:59:57,164 6633 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-01 15:59:57,227 6696 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-01 15:59:57,835 7304 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-01 15:59:58,790 8259 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-01 15:59:59,730 9199 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2024-04-01 15:59:59,748 9217 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 56123 (http) with context path ''
+2024-04-01 15:59:59,756 9225 [main] INFO  b.c.p.a.ApiCurrencyConverterApplicationTests - Started ApiCurrencyConverterApplicationTests in 8.515 seconds (process running for 9.879)
+2024-04-01 16:00:00,839 10308 [http-nio-auto-1-exec-6] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-01 16:00:00,839 10308 [http-nio-auto-1-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-04-01 16:00:00,839 10308 [http-nio-auto-1-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-04-01 16:00:00,980 10449 [http-nio-auto-1-exec-6] INFO  b.c.p.a.ApiCurrencyConverterApplication - POST transaction - BEGIN
+2024-04-01 16:00:00,980 10449 [http-nio-auto-1-exec-6] INFO  b.c.p.a.ApiCurrencyConverterApplication - TRANSACTION INPUT Transaction [id=null, user=br.com.paulodt.apicurrencyconverter.entity.User@4774af83, originCurrency=BRL, originValue=10.0, destinationCurrency=USD, destinationValue=0.0, conversionRate=0.0, date=null]
+2024-04-01 16:00:00,980 10449 [http-nio-auto-1-exec-6] INFO  b.c.p.a.ApiCurrencyConverterApplication - method rateConversion - BEGIN
+2024-04-01 16:00:01,107 10576 [http-nio-auto-1-exec-6] INFO  b.c.p.a.ApiCurrencyConverterApplication - Consult apilayer to get conversion rate - BEGIN
+2024-04-01 16:00:01,107 10576 [http-nio-auto-1-exec-6] INFO  b.c.p.a.ApiCurrencyConverterApplication - URL - https://api.apilayer.com/fixer/convert?to=USD&from=BRL&amount=10.0
+2024-04-01 16:00:01,116 10585 [http-nio-auto-1-exec-6] INFO  b.c.p.a.ApiCurrencyConverterApplication - Consult apilayer to get conversion rate - END
+2024-04-01 16:00:02,410 11879 [http-nio-auto-1-exec-6] INFO  b.c.p.a.ApiCurrencyConverterApplication - Conversion Rate 0.197367
+2024-04-01 16:00:02,420 11889 [http-nio-auto-1-exec-6] INFO  b.c.p.a.ApiCurrencyConverterApplication - method rateConversion - END
+2024-04-01 16:00:02,490 11959 [http-nio-auto-1-exec-6] INFO  b.c.p.a.ApiCurrencyConverterApplication - POST transaction - END
+2024-04-01 16:00:02,548 12017 [http-nio-auto-1-exec-1] INFO  b.c.p.a.ApiCurrencyConverterApplication - POST transaction - BEGIN
+2024-04-01 16:00:02,549 12018 [http-nio-auto-1-exec-1] INFO  b.c.p.a.ApiCurrencyConverterApplication - TRANSACTION INPUT Transaction [id=null, user=br.com.paulodt.apicurrencyconverter.entity.User@2e0d7ca1, originCurrency=USD, originValue=10.0, destinationCurrency=BRL, destinationValue=0.0, conversionRate=0.0, date=null]
+2024-04-01 16:00:02,549 12018 [http-nio-auto-1-exec-1] INFO  b.c.p.a.ApiCurrencyConverterApplication - method rateConversion - BEGIN
+2024-04-01 16:00:02,555 12024 [http-nio-auto-1-exec-1] ERROR b.c.p.a.ApiCurrencyConverterApplication - UserNotFoundException
+2024-04-01 16:00:02,579 12048 [http-nio-auto-1-exec-3] INFO  b.c.p.a.ApiCurrencyConverterApplication - POST transaction - BEGIN
+2024-04-01 16:00:02,580 12049 [http-nio-auto-1-exec-3] INFO  b.c.p.a.ApiCurrencyConverterApplication - TRANSACTION INPUT Transaction [id=null, user=br.com.paulodt.apicurrencyconverter.entity.User@53c12ddc, originCurrency=, originValue=10.0, destinationCurrency=BRL, destinationValue=0.0, conversionRate=0.0, date=null]
+2024-04-01 16:00:02,580 12049 [http-nio-auto-1-exec-3] INFO  b.c.p.a.ApiCurrencyConverterApplication - method rateConversion - BEGIN
+2024-04-01 16:00:02,580 12049 [http-nio-auto-1-exec-3] ERROR b.c.p.a.ApiCurrencyConverterApplication - ValidationException
+2024-04-01 16:00:02,601 12070 [http-nio-auto-1-exec-4] INFO  b.c.p.a.ApiCurrencyConverterApplication - POST transaction - BEGIN
+2024-04-01 16:00:02,601 12070 [http-nio-auto-1-exec-4] INFO  b.c.p.a.ApiCurrencyConverterApplication - TRANSACTION INPUT Transaction [id=null, user=br.com.paulodt.apicurrencyconverter.entity.User@6eee00a3, originCurrency=BRL, originValue=10.0, destinationCurrency=, destinationValue=0.0, conversionRate=0.0, date=null]
+2024-04-01 16:00:02,601 12070 [http-nio-auto-1-exec-4] INFO  b.c.p.a.ApiCurrencyConverterApplication - method rateConversion - BEGIN
+2024-04-01 16:00:02,613 12082 [http-nio-auto-1-exec-4] ERROR b.c.p.a.ApiCurrencyConverterApplication - ValidationException
+2024-04-01 16:00:04,713 14182 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-01 16:00:04,729 14198 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-01 16:00:04,744 14213 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-01 16:05:20,127 372227 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 21 class path changes (0 additions, 21 deletions, 0 modifications)
+2024-04-01 16:05:20,139 372239 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2024-04-01 16:05:20,140 372240 [Thread-5] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-04-01 16:05:20,141 372241 [Thread-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-04-01 16:05:20,144 372244 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-04-01 16:05:20,147 372247 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2024-04-01 16:05:20,149 372249 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-01 16:05:20,153 372253 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-01 16:05:20,164 372264 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-01 16:05:20,211 372311 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Start app
+2024-04-01 16:05:31,882 383982 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Starting ApiCurrencyConverterApplication using Java 17.0.10 with PID 1972 (C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter\target\classes started by paulo in C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter)
+2024-04-01 16:05:31,882 383982 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - No active profile set, falling back to 1 default profile: "default"
+2024-04-01 16:05:32,066 384166 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-01 16:05:32,068 384168 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2024-04-01 16:05:32,132 384232 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-04-01 16:05:32,133 384233 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-01 16:05:32,134 384234 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-01 16:05:32,154 384254 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-04-01 16:05:32,154 384254 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 267 ms
+2024-04-01 16:05:32,164 384264 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2024-04-01 16:05:32,182 384282 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a205f78
+2024-04-01 16:05:32,183 384283 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2024-04-01 16:05:32,184 384284 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/currencyconverter'
+2024-04-01 16:05:32,202 384302 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-01 16:05:32,209 384309 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-01 16:05:32,221 384321 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-01 16:05:32,222 384322 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-01 16:05:32,246 384346 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-01 16:05:32,344 384444 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-04-01 16:05:32,350 384450 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-01 16:05:32,354 384454 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Started ApiCurrencyConverterApplication in 0.51 seconds (process running for 384.615)
+2024-04-01 16:05:32,358 384458 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-04-01 16:05:32,359 384459 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - End app

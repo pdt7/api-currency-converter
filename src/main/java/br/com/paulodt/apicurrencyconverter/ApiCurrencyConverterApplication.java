@@ -12,9 +12,9 @@ public class ApiCurrencyConverterApplication {
 	private static Logger log = LoggerFactory.getLogger(ApiCurrencyConverterApplication.class);
 
 	public static void main(String[] args) {
-		log.info("Inicio da aplicacao");
+		log.info("Start app");
 		SpringApplication.run(ApiCurrencyConverterApplication.class, args);
-		log.info("Fim da aplicacao");
+		log.info("End app");
 	}
 
 }
