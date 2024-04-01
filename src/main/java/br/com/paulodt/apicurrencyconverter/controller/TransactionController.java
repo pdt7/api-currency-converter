@@ -3,8 +3,8 @@ package br.com.paulodt.apicurrencyconverter.controller;
 import java.sql.Date;
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.paulodt.apicurrencyconverter.ApiCurrencyConverterApplication;
 import br.com.paulodt.apicurrencyconverter.entity.Transaction;
 import br.com.paulodt.apicurrencyconverter.exception.UserNotFoundException;
 import br.com.paulodt.apicurrencyconverter.service.TransactionService;
@@ -22,7 +23,7 @@ import br.com.paulodt.apicurrencyconverter.service.UserService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/transaction")
+@RequestMapping(value = "/transaction", produces = "application/json")
 public class TransactionController {
 
     public TransactionController(TransactionService transactionService, UserService userService) {
@@ -31,13 +32,17 @@ public class TransactionController {
 
     private TransactionService transactionService;
         
+    private static Logger log = LoggerFactory.getLogger(ApiCurrencyConverterApplication.class);
+
     @PostMapping
     ResponseEntity<String> create(@RequestBody @Valid Transaction transaction) throws Exception{
         try{
+            log.info("Inicio da criacao POST");
             transactionService.getRateConversion(transaction);
             Date data = new Date(System.currentTimeMillis());
             transaction.setDate(data);
             transactionService.create(transaction);
+            log.info("Fim da criacao POST");
             return ResponseEntity.ok("Transaction created successfully");
         }catch(UserNotFoundException ex){
             return ResponseEntity.badRequest().body(ex.getMessage());
