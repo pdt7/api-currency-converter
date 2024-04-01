@@ -1,3 +1,4 @@
+
 2024-04-01 11:22:12,065 143844 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Starting ApiCurrencyConverterApplication using Java 17.0.10 with PID 32412 (C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter\target\classes started by paulo in C:\Users\paulo\OneDrive\Documentos\Projeto_PDT\api-currency-converter)
 2024-04-01 11:22:12,066 143845 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - No active profile set, falling back to 1 default profile: "default"
 2024-04-01 11:22:12,328 144107 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
@@ -89,4 +90,3 @@
 2024-04-01 11:23:57,165 75087 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Started ApiCurrencyConverterApplication in 1.14 seconds (process running for 75.264)
 2024-04-01 11:23:57,169 75091 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
 2024-04-01 11:23:57,170 75092 [restartedMain] INFO  b.c.p.a.ApiCurrencyConverterApplication - Fim da aplicacao
-2024-04-01 11:24:58,525 136447 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=1m1s784ms416µs200ns).
