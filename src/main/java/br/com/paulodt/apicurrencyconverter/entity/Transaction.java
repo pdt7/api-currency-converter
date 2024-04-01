@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
@@ -15,12 +17,16 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
 
-    private Long idUsuario;
-    @NotBlank
+    @NotBlank(message = "Origin Currency is mandatory.")
     private String originCurrency;
+    
     private long originValue;
-    @NotBlank
+    @NotBlank(message = "Destination Currency is mandatory.")
     private String destinationCurrency;
     private double destinationValue;
     private double conversionRate;
@@ -29,8 +35,8 @@ public class Transaction {
 
     }
 
-    public Transaction(Long idUsuario, String originCurrency, long originValue, String destinationCurrency) {
-        this.idUsuario = idUsuario;
+    public Transaction(User user, String originCurrency, long originValue, String destinationCurrency) {
+        this.user = user;
         this.originCurrency = originCurrency;
         this.originValue = originValue;
         this.destinationCurrency = destinationCurrency;
@@ -41,11 +47,11 @@ public class Transaction {
     public void setId(Long id) {
         this.id = id;
     }
-    public Long getIdUsuario() {
-        return idUsuario;
+    public User getUser() {
+        return user;
     }
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUser(User user) {
+        this.user = user;
     }
     public String getOriginCurrency() {
         return originCurrency;

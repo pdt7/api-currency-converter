@@ -3,6 +3,9 @@ package br.com.paulodt.apicurrencyconverter.controller;
 import java.sql.Date;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,32 +15,44 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.paulodt.apicurrencyconverter.entity.Conversion;
 import br.com.paulodt.apicurrencyconverter.entity.Transaction;
+import br.com.paulodt.apicurrencyconverter.exception.UserNotFoundException;
 import br.com.paulodt.apicurrencyconverter.service.TransactionService;
+import br.com.paulodt.apicurrencyconverter.service.UserService;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/transaction")
 public class TransactionController {
 
-    public TransactionController(TransactionService transactionService) {
+    public TransactionController(TransactionService transactionService, UserService userService) {
         this.transactionService = transactionService;
     }
 
     private TransactionService transactionService;
-    
+        
     @PostMapping
-    List<Transaction> create(@RequestBody @Valid Transaction transaction) throws Exception{
-        transactionService.getRateConversion(transaction);
-        Date data = new Date(System.currentTimeMillis());
-        transaction.setDate(data);
-        return transactionService.create(transaction);
+    ResponseEntity<String> create(@RequestBody @Valid Transaction transaction) throws Exception{
+        try{
+            transactionService.getRateConversion(transaction);
+            Date data = new Date(System.currentTimeMillis());
+            transaction.setDate(data);
+            transactionService.create(transaction);
+            return ResponseEntity.ok("Transaction created successfully");
+        }catch(UserNotFoundException ex){
+            return ResponseEntity.badRequest().body(ex.getMessage());
+        }
+
     }
 
     @GetMapping
     List<Transaction> list(){
         return transactionService.list();
+    }
+
+    @GetMapping("{id}")
+    List<Transaction> listTransactions(@PathVariable("id") Long id){
+        return transactionService.listByUser(id);
     }
 
     @PutMapping

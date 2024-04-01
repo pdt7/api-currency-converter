@@ -1,7 +1,5 @@
 package br.com.paulodt.apicurrencyconverter.service;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -14,7 +12,10 @@ import org.springframework.stereotype.Service;
 
 import br.com.paulodt.apicurrencyconverter.entity.Conversion;
 import br.com.paulodt.apicurrencyconverter.entity.Transaction;
+import br.com.paulodt.apicurrencyconverter.entity.User;
+import br.com.paulodt.apicurrencyconverter.exception.UserNotFoundException;
 import br.com.paulodt.apicurrencyconverter.repository.TransactionRepository;
+import br.com.paulodt.apicurrencyconverter.repository.UserRepository;
 import br.com.paulodt.apicurrencyconverter.util.UtilConversion;
 import jakarta.validation.Valid;
 
@@ -22,9 +23,11 @@ import jakarta.validation.Valid;
 public class TransactionService {
 
     private TransactionRepository transactionRepository;
-
-    public TransactionService(TransactionRepository transactionRepository){
+    private UserRepository userRepository;
+    
+    public TransactionService(TransactionRepository transactionRepository, UserRepository userRepository){
         this.transactionRepository = transactionRepository;
+        this.userRepository = userRepository;
     }
 
     @SuppressWarnings("null")
@@ -38,9 +41,8 @@ public class TransactionService {
         return transactionRepository.findAll(sort);
     }
 
-    @SuppressWarnings("null")
     public List<Transaction> listByUser(Long userId){
-        return transactionRepository.findAllById(Arrays.asList(userId));
+        return transactionRepository.findByUser(userId);
     }
 
     @SuppressWarnings("null")
@@ -55,7 +57,15 @@ public class TransactionService {
         return list();
     }
 
+    @SuppressWarnings("null")
     public void getRateConversion(@Valid Transaction transaction) throws Exception {
+        if(transaction != null && transaction.getUser() != null){
+            List<User> users = userRepository.findAllById(Arrays.asList(transaction.getUser().getUserId()));
+            if(users.isEmpty()){
+                throw new UserNotFoundException();
+            }
+        }
+        
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         
         Request request = new Request.Builder()
@@ -74,6 +84,5 @@ public class TransactionService {
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); 
         Date dataFormatada = formato.parse(conversion.getDate()); 
         transaction.setDate(dataFormatada);
-        System.out.println(jsonEmString);   
     }
 }

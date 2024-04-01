@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import br.com.paulodt.apicurrencyconverter.entity.Transaction;
+import br.com.paulodt.apicurrencyconverter.entity.User;
 
 @SpringBootTest(webEnvironment =WebEnvironment.RANDOM_PORT )
 class ApiCurrencyConverterApplicationTests {
@@ -15,7 +16,9 @@ class ApiCurrencyConverterApplicationTests {
 
 	@Test
 	void testCreateTransactionSuccess() {
-		var transaction = new Transaction(2l, "BRL", 10l, "USD");
+		User user = new User();
+		user.setId(1l);
+		var transaction = new Transaction(user, "BRL", 10l, "USD");
 
 		webTestClient
 			.post()
@@ -27,7 +30,9 @@ class ApiCurrencyConverterApplicationTests {
 
 	@Test
 	void testCreateTransactionFailure() {
-		var transaction = new Transaction(2l, "", 10l, "");
+		User user = new User();
+		user.setId(1l);
+		var transaction = new Transaction(user, "", 10l, "");
 
 		webTestClient
 			.post()
